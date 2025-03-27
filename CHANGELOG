@@ -1,0 +1,52 @@
+## Changelog
+
+### Version 1.0.4 (February 2025)
+
+* Introduced BattleRuleParam
+* state_encoding bug fixed
+* BattleEngine can now be parameterized with BattleRuleParam
+    * and with multiple RNG sources
+* Move's boosts field can either be to self or target with a new self_boosts field
+    * changed Move_encoding to reflect this
+* Added TreeSearchBattlePolicy
+* BattleEnv completely fixed
+* Clip error fixed
+
+### Version 1.0.3 (February 2025)
+
+* Added Greedy Battle Policy
+* Added forward module to assist search based-solutions
+    * This required decoupling from State and BattleEngine, so now a initial State must be input to GameEngine
+        * __init__ params for State, BattleEngine and Side slightly changed
+        * This also made that Match had to be refactored
+        * get_battle_teams was added to help to make an initial State passing a tuple with two BattlingTeam
+* Bug fixed in team_gen where repeated moves could be present
+    * Added label_teams which should be used with team_gen when there is no roster and label_roster is not used
+* gen_pkm_species bug fixed
+* fixed a rule processing order in BattleEngine, and exception raised if any active Pokemon has zero battling moves
+* Elo bug fixed
+
+### Version 1.0.2 (February 2025)
+
+* gen_move fixed
+* generator functions now can have other sub generators as input
+* fixed bug on BattlingTeamView that didn't allow for number of active being different of reserve
+* Move __str__ representation length shortened
+* TreeTournament __init__ params slightly changed
+    * now a Roster or TeamGenerator can be passed as parameter, if a TeamGenerator is passed teams will be random
+* Match was changed to comply with new ruleset
+    * now a SelectionPolicy will be called on competitors even if the teams are random, providing the BattlePolicy with
+    starting information
+
+### Version 1.0.1 (February 2025)
+
+* Fixed RandomBattlePolicy
+    * division by zero when n_switches=0 (e.g. team size = 2 in double battles)
+* Fixed BattleEngine
+    * if an invalid attacker is selected, command is skipped
+    * if an invalid defender is selected, is changed to a valid one
+    * if an invalid move is selected, it is changed for the next with pp>0 and not disabled
+
+### Version 1.0 (January 2025)
+
+* Initial setup.
