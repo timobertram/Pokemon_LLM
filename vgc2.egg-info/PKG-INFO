@@ -1,0 +1,25 @@
+Metadata-Version: 2.4
+Name: vgc2
+Version: 1.0.4
+Summary: The VGC AI Framework emulates the Video Game Championships of Pokémon with AI Trainer agents.
+Home-page: https://gitlab.com/DracoStriker/pokemon-vgc-engine
+Author: Simão Reis
+Author-email: simao.reis@vortex-colab.com, simao.reis@outlook.pt
+License: MIT License
+Classifier: Development Status :: 2 - Development
+Classifier: Intended Audience :: Science/Research
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.10.12
+License-File: LICENSE.txt
+Requires-Dist: gymnasium~=1.0.0
+Requires-Dist: numpy~=2.2.2
+Requires-Dist: setuptools~=75.8.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: license
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: summary
